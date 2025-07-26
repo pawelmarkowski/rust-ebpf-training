@@ -45,4 +45,5 @@ This command will:
 
 ### Read code
 
-loops_and_structures.rs
+- loops_and_structures.rs
+- sequences.rs

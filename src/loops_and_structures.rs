@@ -36,6 +36,8 @@
 // - Types (structs, enums): PascalCase
 // - Modules: snake_case
 
+use std::ascii::AsciiExt;
+
 struct CitiesTupleStruct(String, i32);
 
 struct CitiesStruct {
@@ -66,12 +68,21 @@ enum Trigger {
 /// The `_` in `Trigger::SeasonWeekends(_)` matches any value inside the tuple variant, also ignoring its value.
 /// This allows the match to focus only on the variant type, not the specific data it holds.
 impl Trigger {
+    // associated methods for Trigger enum (something like static methods/constructors)
+    // constructor should be named like `new` or `from_...` e.g. `new_everyday`, `from_season_days` -> Trigger
     fn is_weekend(&self) -> bool {
         match self {
             Trigger::Everyday => false,
             Trigger::Weekend => true,
             Trigger::SeasonDays { .. } => false,
             Trigger::SeasonWeekends(_) => true,
+        }
+    }
+
+    fn is_season_days(&self) -> bool {
+        match self {
+            Trigger::SeasonDays { .. } => true,
+            _ => false,
         }
     }
 }
@@ -171,4 +182,5 @@ fn enum_example() {
         }
     }
     println!("Is weekend? {}", trigger.is_weekend());
+    println!("{} {}", "Is season days?".to_ascii_uppercase(), trigger.is_season_days()); // Using AsciiExt to convert to uppercase
 }
