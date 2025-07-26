@@ -4,8 +4,12 @@
 // - Types (structs, enums): PascalCase
 // - Modules: snake_case
 
-#[derive(PartialEq)]
-struct CityNames(String, i32);
+struct CitiesTupleStruct(String, i32);
+
+struct CitiesStruct {
+    name: String,
+    population: i32,
+}
 
 fn main() {
     println!("Rust Loop Examples with Break");
@@ -19,8 +23,16 @@ fn main() {
     // Example 3: While loop
     print_with_while_loop();
 
-    let city1 = CityNames("Warsaw".to_string(), 1865000);
+    let city1 = CitiesTupleStruct("Warsaw".to_string(), 1865000);
+    let city2 = CitiesStruct {
+        name: "Krakow".to_string(),
+        population: 779115,
+    };
     println!("City 1: {} with population {}", city1.0, city1.1);
+    println!("City 2: {} with population {}", city2.name, city2.population);
+
+    println!("Population in {} is higher than in {}: {}",
+             city1.0, city2.name, city1.1 > city2.population);
 }
 
 /// Prints numbers from 1 to 5 using a loop with break
