@@ -23,7 +23,10 @@ fn main() {
     // Example 3: While loop
     print_with_while_loop();
 
-    let city1 = CitiesTupleStruct("Warsaw".to_string(), 1865000);
+    // Example 4: Using structs to represent cities
+    // String::from and to_string() are used to create String types
+    // "Warsaw" and "Krakow" are &'static str literals, but converted to String
+    let city1 = CitiesTupleStruct(String::from("Warsaw"), 1865000);
     let city2 = CitiesStruct {
         name: "Krakow".to_string(),
         population: 779115,

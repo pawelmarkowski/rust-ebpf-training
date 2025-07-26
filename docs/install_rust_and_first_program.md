@@ -42,3 +42,7 @@ This command will:
 ### Variables and type inference
 
 `let myvar = "inferred"`
+
+### Read code
+
+loops_and_structures.rs
