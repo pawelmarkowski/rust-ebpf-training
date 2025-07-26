@@ -23,3 +23,7 @@ target
 src/fix_code.rs
 bin/fix_code
 src/xxx.txt
+
+# Added by cargo
+
+/target
