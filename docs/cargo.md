@@ -10,6 +10,7 @@ cargo --help
 
 ```bash
 cargo init
+cargo init asdf --lib
 ```
 
 above script creates `Cargo.toml` file and `src/main.rs`

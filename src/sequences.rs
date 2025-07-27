@@ -8,7 +8,6 @@ fn main() {
     example_hash_maps();
 }
 
-
 fn example_arrays() {
     let arr = [1, 2, 3, 4, 5];
     // Arrays in Rust are fixed-size, homogeneous collections
@@ -19,7 +18,7 @@ fn example_arrays() {
     for i in arr.iter() {
         println!("arr element: {}", i);
     }
-    
+
     // &arr is syntactic sugar - Rust automatically calls .iter() for you
     // Both i variables are &i32 (references to integers)
     for i in &arr {
@@ -33,7 +32,7 @@ fn example_slices() {
     for i in slice {
         println!("{}", i);
     }
-    
+
     // Slicing an array
     let arr = [1, 2, 3, 4, 5];
     let slice_of_arr = &arr[1..4]; // Elements from index 1 to 3 (4 is exclusive)
@@ -46,11 +45,11 @@ fn example_tuples() {
     let tuple = (1, "hello", 3.14);
     // Tuples can hold mixed types and have a fixed size
     println!("Tuple: {:?}", tuple);
-    
+
     // Destructuring a tuple
     let (x, y, z) = tuple;
     println!("Destructured: x = {}, y = {}, z = {}", x, y, z);
-    
+
     // Accessing tuple elements by index
     println!("First element: {}", tuple.0);
     println!("Second element: {}", tuple.1);
@@ -85,7 +84,6 @@ fn example_vectors() {
     println!("Modified vector: {:?}", numbers);
 }
 
-
 fn example_hash_maps() {
     let mut map = HashMap::new();
     map.insert(1, "one");
@@ -117,4 +115,3 @@ fn example_hash_maps() {
         println!("Key 4 not found in the map");
     }
 }
-
