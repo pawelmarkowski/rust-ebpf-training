@@ -43,7 +43,9 @@ This command will:
 
 `let myvar = "inferred"`
 
-### Read code
+### Read
 
 - loops_and_structures.rs
 - sequences.rs
+- cargo.md
+- trait_impl.rs // Traits and implementations Rust ~ interfaces and classes OOP
