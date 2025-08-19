@@ -1,0 +1,40 @@
+[package]
+name = "ebpf-program"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+aya-ebpf = "0.1"
+aya-log-ebpf = "0.1"
+ebpf-program-common = { path = "../ebpf-program-common" }
+
+[[bin]]
+name = "ebpf-program"
+path = "src/main.rs"
+test = false
+bench = false
+
+[profile.dev]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = "abort"
+incremental = false
+codegen-units = 1
+rpath = false
+
+[profile.release]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = "abort"
+incremental = false
+codegen-units = 1
+rpath = false
+
+[workspace]
